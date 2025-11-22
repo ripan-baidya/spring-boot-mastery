@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: spring-boot-schedule
+
+# Here, we define the time in milliseconds for the notification task
+# In a production environment, don't hardcode the value here, instead use an environment file.
+app:
+  notification:
+    time: 2000 # milliseconds
