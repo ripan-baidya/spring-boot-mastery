@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: spring-boot-app
+
+# JWT-related properties configuration
+jwt:
+  secret: ${JWT_SECRET:your-default-secret-key-change-this-in-production}
+  expiration: 86400000 # Token expiration time in milliseconds (24 hours)
+  issuer: spring-boot-app
+  header: Authorization
+  prefix: Bearer
