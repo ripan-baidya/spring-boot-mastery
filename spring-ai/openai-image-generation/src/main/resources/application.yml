@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: openai-image-generation
+
+ # spring-ai, openai configuration
+  ai:
+    openai:
+      api-key: ${OPENAI_API_KEY}
+      image:
+        options:
+          model: dall-e-3   # Image generation model
+          quality: hd       # Picture quality
+          size: 1024x1024   # Image dimensions
+          n: 1              # Number of images to generate, n = 1 for dall-e-3
+          style: vivid      # The style of the generated images. Must be one of vivid or natural
+    retry:
+      max-attempts: 3       # Maximum number of retries
+      backoff:
+        initial-interval: 2000ms   # Initial interval between retries
+        multiplier: 2              # Multiplier for the backoff
+        max-interval: 10000ms      # Maximum interval between retries
+
+server:
+  port: 8000
+  servlet:
+    context-path: /api/v1
