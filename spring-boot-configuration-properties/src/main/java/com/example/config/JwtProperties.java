@@ -1,12 +1,10 @@
 package com.example.config;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.context.annotation.Configuration;
 
-@Configuration
 @ConfigurationProperties(prefix = "app.jwt")
 public class JwtProperties {
-    // Make sure you are using exact same name as in application.yaml
+    // Make sure you are using the exact same name as in application.yaml
     // In application.yml file, you will find app.jwt.secret and app.jwt.expiration
     private String secret;
 

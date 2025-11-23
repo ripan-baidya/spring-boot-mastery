@@ -5,5 +5,5 @@ spring:
 # Node: don't use hardcoded value in production. we are using it for testing purpose only
 app:
   jwt:
-    secret: joih029jco0j209jcoi2j0-i-0c09j2c09m39cjoi2hncknwc09j20ncoiwnc-2m
+    secret: sample-jwt-secret-joih029jco0j209jcoi2j0-i-0c09j2c09m39cjoi2hncknwc09j20ncoiwnc-2m
     expiration: 86400000 # 1 day
