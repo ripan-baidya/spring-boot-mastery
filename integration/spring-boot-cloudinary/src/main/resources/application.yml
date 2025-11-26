@@ -1,0 +1,54 @@
+spring:
+  application:
+    name: app
+
+  # Fild upload configuration
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 10MB
+      max-request-size: 10MB
+
+  # Database Configuration
+  # Do not hard code db credentials in the production environment. Use environment variables instead.
+  datasource:
+    url: jdbc:h2:mem:testdb
+    username: sa
+    password:
+  jpa:
+    hibernate:
+      ddl-auto: update
+      show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        # dialect: org.hibernate.dialect.PostgreSQLDialect
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+# Cloudinary Configuration
+cloudinary:
+  cloud-name: ${CLOUDINARY_CLOUD_NAME}
+  api-key: ${CLOUDINARY_API_KEY}
+  api-secret: ${CLOUDINARY_API_SECRET}
+  secure: true
+  upload:
+    folder: ${CLOUDINARY_UPLOAD_FOLDER:app-images}
+    max-file-size: 5MB
+    allowed-formats:
+      - jpg
+      - png
+      - jpeg
+    transformation:
+      width: 500
+      height: 500
+      crop: fill
+      quality: auto
+      format: auto
+
+# Server Configuration
+server:
+  port: 8000
+  servlet:
+    context-path: /api
