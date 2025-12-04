@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: spring-boot-openapi-doc
+
+# OpenAPI Configuration
+# Adjust the properties as per your application requirement
+springdoc:
+  api-docs:
+    enabled: true               # enable api documentation
+    path: /api-docs             # path of api documentation
+  swagger-ui:
+    path: /swagger-ui.html      # path of swagger-ui
+    operations-sorter: method   # sort operations by method
+    tags-sorter: alpha          # sort tags alphabetically
+    enabled: true               # whether to enable swagger-ui.
